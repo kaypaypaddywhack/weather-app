@@ -9,6 +9,7 @@ const tempF = document.querySelector('.f');
 const desc = document.querySelector('.desc');
 const sunriseDOM = document.querySelector('.sunrise');
 const sunsetDOM = document.querySelector('.sunset');
+const date = document.querySelector('.date');
 
 window.addEventListener('load', () => {
     let long;
@@ -52,8 +53,9 @@ window.addEventListener('load', () => {
                 desc.textContent = `${description}`;
                 tempC.textContent = `${temp.toFixed(0)}°C`;
                 tempF.textContent = `${fahrenheit.toFixed(0)}°F`;
-                sunriseDOM.textContent = `${sunriseGMT.toLocaleDateString()}, ${sunriseGMT.toLocaleTimeString()}`;
-                sunsetDOM.textContent = `${sunsetGMT.toLocaleDateString()}, ${sunsetGMT.toLocaleTimeString()}`;
+                date.textContent = `${sunriseGMT.toLocaleDateString()}`;
+                sunriseDOM.textContent = ` ${sunriseGMT.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit', hour12: true})}`;
+                sunsetDOM.textContent = ` ${sunsetGMT.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit', hour12: true})}`;
               });
         });
     }
