@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
                 })
                 .then((data) => {
                     const { temp, feels_like } = data.current;
-                    const place = "";
+                    const place = "Static";
                     const { description } = data.current.weather[0];
                     const { icon } = data.current.weather[0];
                     const { sunrise } = data.current;
