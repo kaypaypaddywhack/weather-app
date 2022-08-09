@@ -15,13 +15,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: rgb(251, 242, 133);
-    background: radial-gradient(
-        circle,
-        rgba(251, 242, 133, 0.6334908963585435) 0%,
-        rgba(224, 196, 91, 0.8407738095238095) 35%,
-        rgba(230, 224, 113, 1) 100%
-      );
+    background:rgba(251, 242, 133, 0.6334908963585435);
 }
 
 .weather {
@@ -60,7 +54,7 @@ body {
     text-align: right;
     padding-right: 5px;
     margin-right: 5px;
-    grid-column-gap: 5px;
+        grid-column-gap: 5px;
 }
 
 .sunrise {

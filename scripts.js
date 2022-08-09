@@ -10,6 +10,7 @@ const desc = document.querySelector('.desc');
 const sunriseDOM = document.querySelector('.sunrise');
 const sunsetDOM = document.querySelector('.sunset');
 const date = document.querySelector('.date');
+let circleColor = document.querySelector('.container');
 
 window.addEventListener('load', () => {
     let long;
@@ -41,6 +42,7 @@ window.addEventListener('load', () => {
                 const { sunset } = data[0].current;
     
                 const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+                circleColor.style.background = setBackgroundColor(icon);
                 const fahrenheit = (temp * 9) / 5 + 32;
 
                 // Converting Epoch(Unix) time to GMT
@@ -56,9 +58,23 @@ window.addEventListener('load', () => {
                 date.textContent = `${sunriseGMT.toLocaleDateString()}`;
                 sunriseDOM.textContent = ` ${sunriseGMT.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit', hour12: true})}`;
                 sunsetDOM.textContent = ` ${sunsetGMT.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit', hour12: true})}`;
+                
               });
         });
     }
-
 });
 
+function setBackgroundColor(weather) {
+    console.log(weather);
+    if(weather.charAt(2)=="n") {
+        return "rgba(0,0,0,0.2)";
+    }
+    else if(weather.charAt(0)==8) {
+        return "rgba(251, 242, 133, 0.63)";
+    } 
+    else if(weather.charAt(0)==0) {
+        return "rgba(251, 242, 133, 0.63)";
+    } 
+    else return "rgba(0,0,0,0.2)";
+    
+}
